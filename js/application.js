@@ -1,29 +1,33 @@
 $(document).ready(function () {
-
-
   var calculateSubtotalTotal = function () {
     var arr = [];
     $('tbody tr').each(function (i, el) {
       var price = parseFloat($(el).children('.price').text());
-      var quantity = parseFloat($(el).find('.quantity input').val());
+      var quantity = parseInt($(el).find('.quantity input').val());
+      if (!quantity) {
+        quantity = 0;
+      }
+
       var subtotal = price * quantity;
-      $(el).children('.subtotal').html(subtotal);
+      var displaySubTotal = subtotal.toFixed(2);
+      $(el).children('.subtotal').html(displaySubTotal);
       arr.push(subtotal);
     });
+
     var total = arr.reduce(function (sum, num) {
       return sum + num;
-    });
+    }).toFixed(2);
     $('.total').html(total);
   };
 
   calculateSubtotalTotal();
 
-  $('.btn.remove').on('click', function (event) {
+  $(document).on('click', '.btn.remove', function (event) {
       $(this).closest('tr').remove();
       calculateSubtotalTotal();
     });
 
-  $('tr input').on('input', function () {
+  $(document).on('input', 'tr input', function () {
     calculateSubtotalTotal();
   });
 
@@ -39,18 +43,9 @@ $(document).ready(function () {
     '<td><button class="btn btn-light btn-sm remove">remove</button></td>' +
     '</tr>');
     calculateSubtotalTotal();
+    $(this).children('.name').val('');
+    $(this).children('.price').val('');
+    $(this).children('.quantity').val('');
   });
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

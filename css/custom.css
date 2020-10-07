@@ -1,0 +1,16 @@
+thead {
+  border-top: hidden;
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.padLeft {
+  padding-left: 5px;
+  margin-right: 5px;
+}
+
+.tot {
+  padding-bottom: 10px;
+}

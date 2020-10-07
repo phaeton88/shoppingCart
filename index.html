@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center">Shopping Cart</h1>
+      <h1 class="heading text-center">Shopping Cart</h1>
       <div class="row">
         <div class="col-12">
           <table class="table table-responsive">
@@ -25,32 +25,33 @@
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Subtotal</th>
+                <th scope="col"></th>
             </thead>
             <tbody>
               <tr>
                 <td class= "name">Beef</td>
-                <td class= "price">10</td>
-                <td class= "quantity"><input type="number" value="4" /></td>
+                <td class= "price">10.99</td>
+                <td class= "quantity"><input type="number" value="4"/></td>
                 <td class= "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
               <tr>
                 <td class= "name">Chicken</td>
-                <td class= "price">5</td>
+                <td class= "price">5.50</td>
                 <td class= "quantity"><input type="number" value="4" /></td>
                 <td class= "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
               <tr>
                 <td class= "name">Fish</td>
-                <td class= "price">8</td>
+                <td class= "price">8.99</td>
                 <td class= "quantity"><input type="number" value="2" /></td>
                 <td class= "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
               <tr>
                 <td class= "name">Noodles</td>
-                <td class= "price">3</td>
+                <td class= "price">3.49</td>
                 <td class= "quantity"><input type="number" value="3" /></td>
                 <td class= "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
@@ -58,16 +59,16 @@
             </tbody>
           </table>
         </div>
-        <div class = "col-12">
-          <h3>Total Price: $<span class = "total"></span></h3>
+        <div class = "col-12 padLeft">
+          <h3 class= "tot">Total Price: $<span class = "total"></span></h3>
         </div>
-        <form class = "col=12" id = "addItem">
+        <form class = "col-12 padLeft" id = "addItem">
           <label>Item</label>
           <input class = "name" type = "text"/>
           <label>Price</label>
-          <input class = "price" type = "number"/>
+          <input class = "price" type = "number" step = ".01" required/>
           <label>Quantity</label>
-          <input class = "quantity" type = "number"/>
+          <input class = "quantity" type = "number" required/>
           <button class="btn btn-primary btn-sm">add</button>
         </form>
       </div>
